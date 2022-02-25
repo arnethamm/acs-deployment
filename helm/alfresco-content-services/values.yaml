@@ -511,7 +511,7 @@ persistence:
     accessModes:
       - ReadWriteMany
     # -- Custom storage class name
-    name: "nfs"
+    name: ""
   existingClaim: "alfresco-volume-claim"
   repository:
     enabled: true
@@ -798,6 +798,13 @@ alfresco-sync-service:
   image:
     repository: quay.io/alfresco/service-sync
     tag: 3.5.0
+  resources:
+    limits:
+      cpu: 1
+      memory: 1024Mi
+    requests:
+      cpu: 150m
+      memory: 256Mi
 
 global:
 
